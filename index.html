@@ -27,12 +27,27 @@
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <meta property="og:title" content="Miku's Portfolio" />
+    <meta
+      property="og:description"
+      content="Web制作・デザインのポートフォリオです。"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://mikudesign04.github.io/portfolio/"
+    />
+    <meta
+      property="og:image"
+      content="https://mikudesign04.github.io/portfolio/img/ogp.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header>
       <div class="header-logo">
-        <a href="#" class="logo">
+        <a href="index.html" class="logo">
           <img src="img/coffee-logo.png" alt="logo" />
         </a>
       </div>
@@ -52,20 +67,20 @@
     </header>
     <section class="mainvisual">
       <div class="main-left">
-        <svg viewBox="0 0 320 120" class="arc-text">
+        <svg viewBox="0 0 320 120" class="arc-text fade-up delay-1">
           <defs>
             <path id="text-curve" d="M 20 100 Q 160 -20 300 100" />
           </defs>
           <text>
             <textPath href="#text-curve" startOffset="50%" text-anchor="middle">
-              Welcom
+              Welcome
             </textPath>
           </text>
         </svg>
-        <p class="main-title">Miku's portfolio</p>
-        <p class="main-sub2">あなたの想いを、</p>
-        <p class="main-sub2">伝わるWebサイトに。</p>
-        <p class="scroll">SCROLL</p>
+        <p class="main-title fade-up delay-2">Miku's Portfolio</p>
+        <p class="main-sub2 fade-up delay-3">あなたの想いを、</p>
+        <p class="main-sub2 fade-up delay-4">伝わるWebサイトに。</p>
+        <p class="scroll fade-up delay-5">SCROLL</p>
       </div>
     </section>
     <section class="prologue">
@@ -87,11 +102,11 @@
       </div>
     </section>
     <section class="profile">
-      <h1>自己紹介</h1>
-      <h2>PROFILE</h2>
+      <h1 class="fade-up delay-1">自己紹介</h1>
+      <h2 class="fade-up delay-2">PROFILE</h2>
       <div class="container">
         <div class="profile-inner">
-          <div class="profile-text">
+          <div class="profile-text fade-up delay-3">
             <p>
               1998年生まれ。<br />千葉県出身、静岡県在住。<br />趣味はカフェ巡り&文房具収集
             </p>
@@ -102,7 +117,7 @@
               <a href="aboutme.html" class="custom-btn btn1">詳しく見る</a>
             </div>
           </div>
-          <div class="profile-img">
+          <div class="profile-img fade-up delay-3">
             <img src="img/girl-pc.png" alt="パソコンをしている女の子" />
           </div>
         </div>
@@ -111,9 +126,9 @@
     <div class="back-img1"></div>
     <section id="works">
       <div class="container">
-        <h1>制作実績</h1>
-        <h2>works</h2>
-        <div class="works work-left">
+        <h1 class="fade-up delay-1">制作実績</h1>
+        <h2 class="fade-up delay-2">works</h2>
+        <div class="works work-left fade-up delay-3">
           <div class="work-img">
             <a href="wokrs1.html">
               <img src="img/work1.png" alt="制作実績1" />
@@ -129,7 +144,7 @@
             <div class="btn2"><a href="wokrs1.html">詳しく見る</a></div>
           </div>
         </div>
-        <div class="works work-right">
+        <div class="works work-right fade-up">
           <div class="work-text">
             <p class="hashtag">#banner</p>
             <p class="work-title">SNS広告バナー</p>
@@ -144,7 +159,7 @@
             </a>
           </div>
         </div>
-        <div class="works work-left">
+        <div class="works work-left fade-up">
           <div class="work-img">
             <a href="works3.html">
               <img src="img/work3.png" alt="制作実績3" />
@@ -162,15 +177,15 @@
       </div>
     </section>
     <section id="service">
-      <h1>できること</h1>
-      <h2>SERVICE MENU</h2>
+      <h1 class="fade-up delay-1">できること</h1>
+      <h2 class="fade-up delay-2">SERVICE MENU</h2>
       <div class="container">
-        <p>
+        <p class="fade-up delay-2">
           見る人、使う人の気持ちに寄り添った<br class="sub-br" />
           分かりやすさはもちろん、訪れた人が心地よく感じられるような<br />思いやりのあるデザインを大切にしています。
         </p>
         <div class="service-menu">
-          <div class="service service1">
+          <div class="service service1 fade-up delay-3">
             <h3 class="service-title">Webデザイン制作</h3>
             <img src="img/design.png" alt="webdesign" />
             <div class="service-btn">
@@ -191,7 +206,7 @@
               </div>
             </div>
           </div>
-          <div class="service service2">
+          <div class="service service2 fade-up delay-3">
             <h3 class="service-title">Webサイト制作</h3>
             <img src="img/website.png" alt="website" />
             <div class="service-btn">
@@ -215,7 +230,7 @@
               </div>
             </div>
           </div>
-          <div class="service service3">
+          <div class="service service3 fade-up">
             <h3 class="service-title">SNS画像制作</h3>
             <img src="img/insta.png" alt="insta" class="insta" />
             <div class="service-btn">
@@ -235,7 +250,7 @@
               </div>
             </div>
           </div>
-          <div class="service service4">
+          <div class="service service4 fade-up">
             <h3 class="service-title">動画編集</h3>
             <img src="img/movie.png" alt="movie" />
             <div class="service-btn">
@@ -262,10 +277,10 @@
     </section>
     <div class="back-img2"></div>
     <section id="contact">
-      <h1>お問い合わせ</h1>
-      <h2>CONTACT</h2>
+      <h1 class="fade-up delay-1">お問い合わせ</h1>
+      <h2 class="fade-up delay-2">CONTACT</h2>
 
-      <div class="contact-text">
+      <div class="contact-text fade-up delay-3">
         <p class="contact-text1">
           最後までご覧いただきありがとうございました。
         </p>
@@ -274,7 +289,7 @@
         </p>
       </div>
 
-      <form class="contact-form" action="#" method="post">
+      <form class="contact-form fade-up delay-3" action="#" method="post">
         <!-- NameとE-mailの横並び領域 -->
         <div class="form-row">
           <div class="form-group">
@@ -320,5 +335,31 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      const prologue = document.querySelector(".prologue");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            document.querySelector(".sub-soft1").classList.add("is-show");
+
+            setTimeout(() => {
+              document.querySelector(".sub-soft2").classList.add("is-show");
+            }, 500);
+
+            setTimeout(() => {
+              document.querySelector(".main-soft").classList.add("is-show");
+            }, 1000);
+
+            observer.disconnect();
+          }
+        },
+        {
+          threshold: 0.2,
+        },
+      );
+
+      observer.observe(prologue);
+    </script>
   </body>
 </html>

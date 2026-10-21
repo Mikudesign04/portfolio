@@ -160,6 +160,40 @@ h3 {
   text-align: center;
 }
 
+/* 下からふわっと表示 */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* 画面に入ったら表示 */
+.fade-up.is-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 1つずつ時間差をつける */
+.delay-1 {
+  transition-delay: 0.3s;
+}
+
+.delay-2 {
+  transition-delay: 0.6s;
+}
+
+.delay-3 {
+  transition-delay: 0.9s;
+}
+
+.delay-4 {
+  transition-delay: 1.2s;
+}
+
+.delay-5 {
+  transition-delay: 1.5s;
+}
+
 header {
   padding: 20px 30px;
   display: flex;
@@ -171,6 +205,7 @@ header {
   box-sizing: border-box;
   z-index: 10;
   width: 100%;
+  border-bottom: #f7f3eb 1px solid;
 }
 
 .logo img {
@@ -200,7 +235,7 @@ header {
     width: 50px;
     position: fixed;
     top: 15px;
-    z-index: 300;
+    z-index: 500;
   }
   .navi ul {
     flex-direction: column;
@@ -215,6 +250,10 @@ header {
     z-index: 300;
     transform: translateX(-100%);
     transition: transform 0.5s ease;
+  }
+  .navi ul li {
+    width: 100%;
+    border-bottom: #f7f3eb 1px dotted;
   }
   .hamburger {
     display: flex;
@@ -265,12 +304,9 @@ header {
     background: #fff;
   }
   .open .navi ul {
+    top: 60px;
     left: 0;
     transform: translateX(0);
-  }
-  .open .logo img {
-    position: relative;
-    z-index: 400;
   }
 }
 .mainvisual {
@@ -288,17 +324,17 @@ header {
   text-align: center;
   color: #fff;
   padding-top: 80px;
-  width: 500px;
+  max-width: 100%;
 }
 
 .main-sub {
   font-family: "Dancing Script", cursive;
-  font-size: 30px;
+  font-size: 34px;
 }
 
 .main-title {
   font-family: "Dancing Script", cursive;
-  font-size: 50px;
+  font-size: 54px;
   margin-bottom: 30px;
 }
 
@@ -323,7 +359,7 @@ header {
 
 .scroll {
   position: relative;
-  margin-top: 30px;
+  margin-top: 60px;
 }
 
 .scroll::after {
@@ -334,11 +370,25 @@ header {
   width: 1px;
   height: 60px;
   background-color: #fff;
+  animation: scroll-line 1s ease-in-out infinite;
 }
 
+@keyframes scroll-line {
+  0% {
+    transform: translate(-50%, -20px);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 40px);
+    opacity: 0;
+  }
+}
 @media (max-width: 800px) {
   .main-left {
-    padding-top: 40px;
+    padding-top: 80px;
     max-width: 100%;
   }
   .mainvisual {
@@ -488,6 +538,23 @@ header {
     height: 42px;
   }
 }
+/* プロローグ：最初は非表示 */
+.sub-soft1,
+.sub-soft2,
+.main-soft {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* ふわっと浮かび上がる */
+.sub-soft1.is-show,
+.sub-soft2.is-show,
+.main-soft.is-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .profile-img {
   width: 55%;
   margin-top: -100px;
@@ -785,13 +852,17 @@ header {
 /*works1*/
 .works-sub {
   padding-top: 100px;
+  max-width: 95%;
+  margin: 40 0;
+}
+.works-sub .works {
   width: 90%;
   margin: 0 auto;
 }
 
 dl,
 .works-text {
-  width: 95%;
+  width: 90%;
   margin: 40px auto;
 }
 
@@ -801,21 +872,26 @@ dl,
 }
 
 .works-text dt {
-  width: 25%;
+  width: 20%;
   box-sizing: border-box;
   padding: 30px 0;
   margin: 0;
   border-bottom: 1px #c9957e solid;
   display: flex;
   align-items: center;
+  margin-left: 30px;
+  color: #c9957e;
+  height: 150px;
 }
 .works-text dd {
-  width: 70%;
+  width: 75%;
   box-sizing: border-box;
   margin: 0;
-  padding: 30px 0;
   border-bottom: 1px #c9957e solid;
   text-align: left;
+  height: 150px;
+  display: flex;
+  align-items: center;
 }
 
 .works-text dt:first-child {
@@ -825,9 +901,40 @@ dl,
   border-top: 1px #c9957e solid;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 800px) and (max-width: 800px) {
   .works-sub {
     padding-top: 60px;
+  }
+  .works-text {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    margin: 30px auto;
+    border-top: 1px #c9957e solid;
+  }
+  .works-text dt {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    margin: 0;
+    border: none;
+    color: #c9957e;
+    box-sizing: border-box;
+  }
+  .works-text dd {
+    width: 100%;
+    height: auto;
+    padding: 0 15px 20px;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+    text-align: left;
+    display: block;
+    border-bottom: 1px #c9957e solid;
+  }
+  .works-text dt:first-child,
+  .works-text dd:first-of-type {
+    border-top: none;
   }
 }
 /* フォーム全体のレイアウト */
@@ -964,8 +1071,32 @@ dl,
     justify-content: flex-start;
   }
 }
+footer {
+  margin-top: 60px;
+  background-color: #a6ae94;
+  padding: 40px 20px;
+}
+footer .navi ul {
+  justify-content: center;
+  margin-bottom: 40px;
+}
+footer small {
+  color: #f7f3eb;
+  display: block;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  footer .navi ul {
+    display: block;
+  }
+}
 #my-mind h2 {
   margin-bottom: 0;
+}
+
+#aboutme h1 {
+  margin-top: 200px;
 }
 
 .my-mind {
@@ -979,9 +1110,15 @@ dl,
   padding: 40px;
   min-height: 300px;
   width: auto;
-  transform: translateX(-100px);
+  transform: translateX(40px);
 }
 
+@media (min-width: 801px) {
+  .my-mind > .main-soft {
+    position: relative;
+    left: -100px;
+  }
+}
 /* 2つ目：楕円を左、女の子を右 */
 .my-mind-reverse {
   position: relative;
@@ -1022,6 +1159,7 @@ dl,
   grid-template-columns: 100px 1fr;
   max-width: 900px;
   margin: 0 auto;
+  position: relative;
 }
 .my-history dt {
   width: 35%;
@@ -1032,8 +1170,7 @@ dl,
   display: flex;
   justify-content: flex-start;
 }
-
-dd {
+.my-history dd {
   box-sizing: border-box;
   margin: 0;
   padding: 30px 0;
@@ -1058,4 +1195,192 @@ dd {
   padding: 20px;
   margin: 20px 0;
   border-radius: 30px;
+}
+
+/* ▼ 走っている女の子（history-img1）の調整 */
+.history-img1 {
+  position: absolute;
+  /* 2005年の行のあたりに来るように数値は調整してください */
+  top: 350px;
+  right: 100px;
+  width: 250px; /* デザインに合わせてサイズ調整してください */
+  z-index: 2;
+}
+.history-img1 img {
+  width: 100%;
+  height: auto;
+}
+
+.history-img2 {
+  position: absolute;
+  /* 2005年の行のあたりに来るように数値は調整してください */
+  top: 1150px;
+  right: 100px;
+  width: 250px; /* デザインに合わせてサイズ調整してください */
+  z-index: 2;
+}
+.history-img2 img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 800px) {
+  #aboutme h1 {
+    margin-top: 80px;
+  }
+  .history-img1 {
+    width: 100px;
+    right: 20px;
+    top: 350px;
+  }
+  .history-img2 {
+    width: 100px;
+    right: 50px;
+    top: 1450px;
+  }
+  /* スマホ表示（画面幅が768px以下の場合） */
+  /* --- 1つ目の「私の思い」 --- */
+  .my-mind {
+    display: flex;
+    flex-direction: column; /* 上下縦並びに変更 */
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    position: relative;
+    /* 1. 大きいもくもく（テキスト）を一番上 */
+  }
+  .my-mind .main-soft {
+    order: 1;
+    width: 350px;
+    height: 350px;
+    min-height: auto;
+    transform: translateX(0); /* PC用の横ズレをリセット */
+    margin-bottom: 0;
+  }
+  .my-mind {
+    /* 2. 小さいもくもく（装飾）を真ん中に配置 */
+  }
+  .my-mind .sub-soft1 {
+    display: block; /* 非表示にせず表示させる */
+    order: 2;
+    position: static; /* absoluteを解除してテキストと画像の間に入れる */
+    width: 80px; /* サイズ（調整可） */
+    height: 80px; /* サイズ（調整可） */
+    background: rgba(107, 89, 72, 0.12); /* main-softと同じ薄いブラウン系 */
+    border-radius: 50%;
+    margin-top: 40px;
+    transform: translateX(-60px); /* 上下の余白 */
+  }
+  .my-mind {
+    /* 使わないもう一つの小さいもくもくは非表示 */
+  }
+  .my-mind .sub-soft2 {
+    display: none;
+  }
+  .my-mind {
+    /* 3. 女の子の画像を一番下 */
+  }
+  .my-mind .coffee-logo {
+    order: 3;
+    position: static; /* absoluteを解除 */
+    margin-top: 5px;
+    width: 200px;
+  }
+  .my-mind .coffee-logo img {
+    /* スマホ用の画像サイズ */
+    height: auto;
+  }
+  /* --- 2つ目の「私の思い」（reverse） --- */
+  .my-mind-reverse {
+    display: flex;
+    flex-direction: column; /* 上下縦並びに変更 */
+    align-items: center;
+    justify-content: center;
+    padding: 30px 5%;
+    position: relative;
+    /* 1. 大きいもくもく（テキスト）を一番上 */
+  }
+  .my-mind-reverse .main-soft {
+    order: 1;
+    width: 350px;
+    height: 350px;
+    transform: translateX(0); /* PC用の横ズレをリセット */
+    margin-bottom: 0;
+  }
+  .my-mind-reverse {
+    /* 2. 小さいもくもく（装飾）を真ん中に配置 */
+  }
+  .my-mind-reverse .sub-soft1 {
+    display: block;
+    order: 2;
+    position: static;
+    width: 80px;
+    height: 80px;
+    background: rgba(107, 89, 72, 0.12);
+    border-radius: 50%;
+    transform: translateX(100px);
+  }
+  .my-mind-reverse .sub-soft2 {
+    display: none;
+  }
+  .my-mind-reverse {
+    /* 3. 女の子の画像を一番下 */
+  }
+  .my-mind-reverse .coffee-logo {
+    order: 3;
+    position: static;
+    margin-top: 5px;
+    transform: translateX(250px);
+    width: 200px;
+  }
+  .my-mind-reverse .coffee-logo img {
+    width: 250px;
+    height: auto;
+  }
+}
+.my-mind {
+  /* 最初は透明にする */
+}
+.my-mind .sub-soft1,
+.my-mind .sub-soft2,
+.my-mind .main-soft {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.my-mind {
+  /* ふわっと浮かび上がる */
+}
+.my-mind .sub-soft1.is-show,
+.my-mind .sub-soft2.is-show,
+.my-mind .main-soft.is-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MY HISTORY：右からスライド */
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-in-right.is-show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 下からふわっと表示 */
+.my-history dt,
+.my-history dd {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* 表示されたとき */
+.my-history dt.is-show,
+.my-history dd.is-show {
+  opacity: 1;
+  transform: translateY(0);
 }/*# sourceMappingURL=style.css.map */
