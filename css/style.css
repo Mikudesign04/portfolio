@@ -93,6 +93,10 @@ h2::after {
   .sub-br {
     display: block;
   }
+  .back-img1,
+  .back-img2 {
+    background-position: center center;
+  }
 }
 section {
   text-align: center;
