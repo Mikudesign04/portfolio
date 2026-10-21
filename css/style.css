@@ -600,7 +600,7 @@ header {
   }
 }
 .service {
-  width: 98%;
+  max-width: 98%;
   border: 1px #a6ae94 solid;
   padding: 20px 10px;
   margin-top: 0;
