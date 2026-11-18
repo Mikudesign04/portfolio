@@ -8,6 +8,7 @@ body {
   color: #4e342e;
   background-color: #f7f3eb;
   font-size: 16px;
+  overflow-x: clip;
 }
 
 a {
@@ -29,6 +30,7 @@ h1 {
   font-weight: normal;
   margin: 60px 0 20px;
   color: #4e342e;
+  text-align: center;
 }
 
 h2 {
@@ -95,18 +97,18 @@ h2::after {
   }
   .back-img1,
   .back-img2 {
-    background-position: center center;
+    background-size: 100%;
+    background-position: center;
+    background-size: no-repeat;
+  }
+  section {
+    text-align: center;
+  }
+  .container {
+    max-width: 950px;
+    margin: 0 auto;
   }
 }
-section {
-  text-align: center;
-}
-
-.container {
-  max-width: 950px;
-  margin: 0 auto;
-}
-
 .btn1 {
   position: relative;
   display: inline-block;
@@ -576,7 +578,11 @@ header {
 
 .profile-inner {
   display: flex;
-  gap: 40px;
+  padding: 0 50px;
+}
+
+.profile-text {
+  margin-left: 100px;
 }
 
 @media (max-width: 800px) {
@@ -607,10 +613,14 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 #service {
   padding-bottom: 80px;
+  padding: 0 80px;
+  text-align: center;
+  margin-bottom: 120px;
 }
 
 .service img {
@@ -765,6 +775,7 @@ header {
 }
 .works {
   margin-top: 60px;
+  padding: 0 80px;
 }
 
 .work-img {
@@ -1203,29 +1214,11 @@ footer small {
 
 /* ▼ 走っている女の子（history-img1）の調整 */
 .history-img1 {
-  position: absolute;
-  /* 2005年の行のあたりに来るように数値は調整してください */
-  top: 350px;
-  right: 100px;
-  width: 250px; /* デザインに合わせてサイズ調整してください */
-  z-index: 2;
-}
-.history-img1 img {
-  width: 100%;
-  height: auto;
+  display: none;
 }
 
 .history-img2 {
-  position: absolute;
-  /* 2005年の行のあたりに来るように数値は調整してください */
-  top: 1150px;
-  right: 100px;
-  width: 250px; /* デザインに合わせてサイズ調整してください */
-  z-index: 2;
-}
-.history-img2 img {
-  width: 100%;
-  height: auto;
+  display: none;
 }
 
 @media (max-width: 800px) {
@@ -1235,12 +1228,23 @@ footer small {
   .history-img1 {
     width: 100px;
     right: 20px;
-    top: 350px;
+    top: 380px;
   }
   .history-img2 {
     width: 100px;
     right: 50px;
-    top: 1450px;
+    top: 1500px;
+  }
+  .my-history dt {
+    width: 20%;
+  }
+  .my-history dd {
+    width: 80%;
+    font-size: 12px;
+    margin-left: -35px;
+  }
+  .my-history dt::after {
+    margin-left: 10px;
   }
   /* スマホ表示（画面幅が768px以下の場合） */
   /* --- 1つ目の「私の思い」 --- */
@@ -1308,6 +1312,7 @@ footer small {
     order: 1;
     width: 350px;
     height: 350px;
+    min-height: auto;
     transform: translateX(0); /* PC用の横ズレをリセット */
     margin-bottom: 0;
   }
@@ -1315,14 +1320,15 @@ footer small {
     /* 2. 小さいもくもく（装飾）を真ん中に配置 */
   }
   .my-mind-reverse .sub-soft1 {
-    display: block;
+    display: block; /* 非表示にせず表示させる */
     order: 2;
-    position: static;
-    width: 80px;
-    height: 80px;
-    background: rgba(107, 89, 72, 0.12);
+    position: static; /* absoluteを解除してテキストと画像の間に入れる */
+    width: 80px; /* サイズ（調整可） */
+    height: 80px; /* サイズ（調整可） */
+    background: rgba(107, 89, 72, 0.12); /* main-softと同じ薄いブラウン系 */
     border-radius: 50%;
-    transform: translateX(100px);
+    margin-top: 40px;
+    transform: translateX(-60px); /* 上下の余白 */
   }
   .my-mind-reverse .sub-soft2 {
     display: none;
@@ -1334,8 +1340,8 @@ footer small {
     order: 3;
     position: static;
     margin-top: 5px;
-    transform: translateX(250px);
-    width: 200px;
+    transform: none;
+    width: 100%;
   }
   .my-mind-reverse .coffee-logo img {
     width: 250px;
