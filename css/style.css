@@ -775,6 +775,9 @@ header {
     width: 100%;
     margin: 0 auto;
   }
+  #service {
+    padding: 0 20px;
+  }
 }
 .works {
   margin-top: 60px;
@@ -844,10 +847,10 @@ header {
     flex-direction: column;
     justify-content: center;
     gap: 0;
+    padding: 0 20px;
   }
   .work-text {
     width: 98%;
-    padding: 30px;
   }
   .work-img {
     width: 95%;
@@ -1062,8 +1065,8 @@ footer small {
 .my-history {
   display: grid;
   grid-template-columns: 100px 1fr;
-  max-width: 900px;
-  margin: 0 auto;
+  width: 98%;
+  margin: 0 10px;
   position: relative;
 }
 .my-history dt {
