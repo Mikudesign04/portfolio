@@ -289,17 +289,70 @@
         </p>
       </div>
 
-      <div class="contact-form">
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSfBZxtPkN6JBbTykv7ymQGcgU5RxFLwCUCHhEDxUFxu2zpxlA/viewform?embedded=true"
-          width="100%"
-          height="800"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
+      <div class="contact-form fade-up delay-3">
+        <form
+          action="https://docs.google.com/forms/d/e/1FAIpQLSfBZxtPkN6JBbTykv7ymQGcgU5RxFLwCUCHhEDxUFxu2zpxlA/formResponse"
+          method="POST"
+          target="hidden_iframe"
         >
-         
-        </iframe>
+          <div class="form-item">
+            <label for="name">お名前</label>
+            <input type="text" id="name" name="entry.1884265043" required />
+          </div>
+
+          <div class="form-item">
+            <label for="email">メールアドレス</label>
+            <input type="email" id="email" name="entry.1212348438" required />
+          </div>
+
+          <div class="form-item">
+            <p>ご依頼内容</p>
+            <div class="radio-group">
+              <label>
+                <input
+                  type="radio"
+                  name="entry.1963406753"
+                  value="Webサイト制作"
+                  required
+                />
+                Webサイト制作
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="entry.1963406753"
+                  value="LP制作"
+                  required
+                />
+                LP制作
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="entry.1963406753"
+                  value="バナー制作・SNSデザイン"
+                />
+                バナー/SNSデザイン
+              </label>
+
+              <label>
+                <input type="radio" name="entry.1963406753" value="その他" />
+                その他
+              </label>
+            </div>
+          </div>
+
+          <div class="form-item">
+            <label for="message">お問い合わせ内容</label>
+            <textarea id="message" name="entry.513669972" required></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit">送信する</button>
+          </div>
+        </form>
+
+        <iframe name="hidden_iframe" style="display: none"></iframe>
       </div>
     </section>
     <footer>
