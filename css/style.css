@@ -1047,7 +1047,6 @@ dl,
 }
 
 /* ラジオボタン */
-/* ラジオボタン */
 .radio-group {
   display: flex;
   flex-wrap: wrap;
@@ -1139,6 +1138,48 @@ dl,
     gap: 15px;
   }
 }
+#contact-thanks {
+  padding: 60px 20px;
+  text-align: center;
+  color: #6b5948;
+}
+#contact-thanks .thanks-en {
+  font-size: 20px;
+  letter-spacing: 0.2em;
+  margin-bottom: 50px !important;
+}
+#contact-thanks h3 {
+  font-size: 24px;
+  margin-bottom: 50px !important;
+  text-decoration: none;
+}
+#contact-thanks p {
+  margin-bottom: 30px !important;
+}
+#contact-thanks .btn3 a {
+  display: inline-block;
+  margin-top: 15px;
+  text-decoration: none;
+  border-bottom: 1px solid #c9957e;
+  padding-bottom: 6px;
+}
+#contact-thanks {
+  /* 右矢印 */
+}
+#contact-thanks .btn3 a::after {
+  content: "→";
+  display: inline-block;
+  margin-left: 12px;
+  transition: transform 0.3s ease;
+  color: #c9957e;
+}
+#contact-thanks {
+  /* ホバーしたら矢印が右に動く */
+}
+#contact-thanks .btn3 a:hover::after {
+  transform: translateX(10px);
+}
+
 footer {
   margin-top: 60px;
   background-color: #a6ae94;
