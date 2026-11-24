@@ -143,3 +143,24 @@ const fadeUpObserver = new IntersectionObserver(
 fadeUpItems.forEach((item) => {
   fadeUpObserver.observe(item);
 });
+// お問い合わせフォーム：送信完了メッセージ
+const contactForm = document.getElementById("contact-form");
+const contactThanks = document.getElementById("contact-thanks");
+const hiddenIframe = document.getElementById("hidden_iframe");
+
+if (contactForm && contactThanks && hiddenIframe) {
+  let isSubmitted = false;
+
+  contactForm.addEventListener("submit", () => {
+    isSubmitted = true;
+  });
+
+  hiddenIframe.addEventListener("load", () => {
+    if (!isSubmitted) return;
+
+    contactForm.style.display = "none";
+    contactThanks.hidden = false;
+
+    isSubmitted = false;
+  });
+}
